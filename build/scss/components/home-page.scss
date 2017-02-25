@@ -1,0 +1,340 @@
+
+.small-heading {
+    padding: 80px 15px 30px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    h3 {
+        font-size: 36px;
+        font-weight: 500;
+    }
+}
+.small-heading_white {
+    h3 {
+        color: #fff;
+    }
+}
+
+
+/* ( a ) Homepage */
+
+.home-page {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+/* ( b ) Introduction Section */
+
+.introduction {
+    float: left;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../img/home-bg.jpg);
+    background-size: cover;
+    background-position: 0 0;
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+
+.mask {
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #1a1b23;
+        transition: opacity 1s ease;
+    }
+}
+
+.introduction__content {
+    position: relative;
+    z-index: 10;
+    top: 50%;
+    opacity: 0.9;
+    transform: translateY(-50%);
+
+}
+.introduction__content-title {
+    text-transform: uppercase;
+    text-align: center;
+    h1 {
+        margin: 0 0 20px 0;
+        line-height: 1.1;
+        font-size: 63px;
+        font-weight: 500;
+        color: #fff;
+    }
+    h2 {
+        margin: 0;
+        text-decoration: underline;
+        font-weight: 300;
+        font-size: 30px;
+        color: #fff;
+    }
+}
+
+.introduction__content-title h1 span,
+.main-heading h2 span {
+    color: $main-color;
+}
+
+.social-media {
+    font-size: 25px;
+    text-align: center;
+    margin: 50px 0 0 0;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    outline: 0 none;
+    padding: 0 10px;
+}
+
+.social-media a + .tooltip > .tooltip-inner {
+    background-color: transparent;
+    color: $main-color;
+    font-size: 16px;
+}
+.social-media a + .tooltip > .tooltip-arrow {
+    border-bottom-color: transparent;
+}
+
+/*Bootstrap tooltips Customized*/
+
+.social-media a:hover {
+    color: $main-color;
+}
+
+/* ( c ) Navigation Menu */
+
+.menu {
+    float: left;
+    padding: 0;
+    position: relative;
+}
+
+.menu__btn {
+    width: 100%;
+    height: 25%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-position: 0 0;
+        background-size: cover;
+        transition: transform 1s ease;
+        transform: translateZ(0);
+    }
+    &:hover {
+        &:after {
+            opacity: 0.7;
+        }
+        &:before {
+            transform: scale(1.2);
+        }
+        .menu__btn-heading {
+            .menu__btn-icon {
+
+                i {
+                    //box-shadow: 0 0 0 50px rgba(256, 256, 256, 0);
+                }
+                &:before {
+                    opacity: 0;
+                    animation: ripple 500ms cubic-bezier(0.4, 0, 0.2, 1);
+                }
+                &:after {
+                    transform: scale(0.9) rotate(-180deg) translateZ(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+.menu__btn.mask {
+    &:hover {
+        &:after {
+            opacity: 0.7;
+        }
+    }
+}
+.menu__btn:nth-child(1) {
+    &:before {
+        background-image: url(../img/menu/profile_btn.jpg);
+    }
+}
+.menu__btn:nth-child(2) {
+    &:before {
+        background-image: url(../img/menu/resume_btn.jpg);
+    }
+}
+.menu__btn:nth-child(3) {
+    &:before {
+        background-image: url(../img/menu/portfolio_btn.jpg);
+    }
+}
+.menu__btn:nth-child(4) {
+    &:before {
+        background-image: url(../img/menu/contact_btn.jpg);
+    }
+}
+
+
+.menu__btn-heading {
+    position: relative;
+    z-index: 2;
+    float: left;
+    top: 50%;
+    width: 91.66666667%;
+    margin-left: 8.33333333%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    transform: translateY(-50%);
+}
+
+
+.menu__btn-icon {
+    float: left;
+    width: 16.66666667%;
+    position: relative;
+    min-height: 1px;
+    i {
+        // background: rgba(256, 256, 256, 0.2);
+        border-radius: 50%;
+        color: #fff;
+        display: block;
+        font-size: 25px;
+        height: 60px;
+        line-height: 60px;
+        margin: 0 auto;
+        text-align: center;
+        box-shadow: 0 0 0 0 rgba(256, 256, 256, 0.2);
+        max-width: 60px;
+        transition: all 0.3s;
+    }
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: url(/img/icon/hexagon-main-color.svg) no-repeat center center;
+        content: '';
+        display: block;
+        opacity: 0;
+        transition: opacity .2s linear;
+    }
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: -1;
+        background: url(/img/icon/hexagon-main-color.svg) no-repeat center center;
+        opacity: .4;
+        transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), opacity .5s ease;
+    }
+}
+
+
+@keyframes ripple{
+    0% {
+        opacity:0;
+        transform:scale(0.8) rotate(0);
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity:0;
+        transform:scale(1.8) rotate(90deg)
+    }
+}
+
+.menu__btn-text {
+    float: left;
+    width: 83.33333333%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    h2 {
+        color: #fff;
+        margin: 0;
+        font-size: 25px;
+        opacity: 0.9;
+        font-weight: 500;
+        text-transform: uppercase;
+        span {
+            color: $main-color;
+        }
+    }
+    h3 {
+        color: #fff;
+        margin-top: 5px;
+        margin-bottom: 0;
+        font-size: 16px;
+        opacity: 0.9;
+        font-style: italic;
+        font-weight: 300;
+    }
+}
+
+
+
+
+                    /*------------------
+                       5 ) Close Button
+                      ------------------*/
+
+.close-btn {
+    z-index: 1000;
+    cursor: pointer;
+    text-align: center;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 44px;
+    position: fixed;
+    right: 3%;
+    top: 30px;
+    font-family: Arial;
+    touch-action: manipulation;
+    transition: all .3s ease;
+    &:hover, &:active {
+        animation-name: rotate;
+        animation-duration: .6s;
+    }
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}

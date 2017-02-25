@@ -1,0 +1,249 @@
+/*-----------------
+                       8 ) Resume Page
+                      -----------------*/
+
+/* ( a ) Education Section */
+
+#resume-page {
+    .image-container {
+        &:before {
+            background-image: url(../img/background/resume_image.jpg);
+        }
+    }
+}
+.education  {
+    padding: 0 0 50px 0;
+}
+.education__box {
+    position: relative;
+    width: 83.33333333%;
+    margin: 25px 0 0 8.33333333%;
+    padding: 0 15px;
+    &::before {
+        background: $main-color;
+        content: "";
+        height: 96%;
+        left: 50px;
+        position: absolute;
+        top: 2%;
+        width: 2px;
+    }
+}
+
+
+.education__item,
+.experience__item {
+    position: relative;
+    margin-bottom: 5px;
+}
+.education__item {
+    margin: 10px 0 0 0;
+    &:before {
+        content: '';
+        position: absolute;
+        left: 21px;
+        width: 30px;
+        height: 30px;
+        background: $main-color;
+        border: 5px solid #f5f5f5;
+        border-radius: 50%;
+        transition: all 0.3s;
+        box-shadow: 1px 1px 3px 0 rgba(0,0,0,.3);
+    }
+}
+
+.education__content {
+    padding: 0 15px 15px 15px;
+    margin-left: 56px;
+    width: auto;
+    h3 {
+        background: $main-color;
+        color: #fff;
+        display: block;
+        margin: 0;
+        padding: 10px;
+        position: relative;
+        font-size: 18px;
+        font-weight: 500;
+        box-shadow: 1px 1px 3px 0 rgba(0,0,0,.3);
+        span {
+            font-size: 16px;
+        }
+        &:before {
+            border-color: transparent $main-color transparent transparent;
+            border-image: none;
+            border-style: solid;
+            border-width: 10px;
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 5px;
+        }
+    }
+    p {
+        margin: 15px 0 0 0;
+        padding: 0 5px;
+        font-size: 14px;
+        line-height: 1.42;
+    }
+}
+
+
+/* ( b ) Experience Section */
+
+.experience {
+    background: $main-color;
+    padding: 0 0 50px 0;
+}
+
+.experience__box {
+    width: 83.33333333%;
+    margin: 25px 0 0 8.33333333%;
+    padding: 0 15px;
+    position: relative;
+    &:before {
+        background: #fff;
+        content: "";
+        height: 96%;
+        right: 50px;
+        position: absolute;
+        top: 2%;
+        width: 2px;
+    }
+}
+
+.experience__item {
+    margin: 10px 0 0 0;
+    &:before {
+        content: '';
+        background: #fff;
+        border: 5px solid $main-color;
+        border-radius: 50%;
+        height: 30px;
+        right: 21px;
+        display: inline-block;
+        vertical-align: top;
+        position: absolute;
+        width: 30px;
+        vertical-align: top;
+        box-shadow: 1px 1px 3px 0 rgba(0,0,0,.3);
+    }
+}
+
+.experience__content {
+    padding: 0 15px 15px 15px;
+    margin-right: 56px;
+    h3 {
+        background: #fff;
+        color: $main-color;
+        display: block;
+        margin: 0;
+        line-height: 1.42;
+        padding: 10px;
+        position: relative;
+        font-size: 18px;
+        font-weight: 500;
+        box-shadow: 1px 1px 3px 0 rgba(0,0,0,.3);
+        span {
+            font-size: 16px;
+        }
+        &:before {
+            border-color: transparent transparent transparent #fff;
+            border-image: none;
+            border-style: solid;
+            border-width: 10px;
+            content: "";
+            position: absolute;
+            left: 100%;
+            top: 5px;
+        }
+    }
+    p {
+        margin: 15px 0 0 0;
+        padding: 0 5px;
+        font-size: 14px;
+        line-height: 1.42;
+        color: #fff;
+    }
+}
+
+
+/* ( c ) Skills Section */
+
+.skills {
+    margin: 0 0 40px 0;
+}
+.skill__box {
+    width: 83.33333333%;
+    margin: 0 8.33333333%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.skill__item {
+    padding: 20px 15px;
+
+}
+.skill__title {
+    margin: 20px 0 10px 0;
+    h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+    }
+}
+.skill__range {
+    position: relative;
+    height: 20px;
+    background-color: #ddd;
+}
+.skill__range-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 90%;
+    background-color: $main-color;
+    background: repeating-linear-gradient(135deg, $main-color 18px,
+    darken($main-color, 5%) 19px, darken($main-color, 5%) 21px, $main-color 22px, $main-color 30px
+    );
+    box-shadow: 1px 1px 3px 0 rgba(0,0,0,.3);
+
+    span {
+        position: absolute;
+        z-index: 0;
+        right: -20px;
+        top: -20px;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-family: 'PF DinDisplay Pro';
+        font-size: 22px;
+        color: #fff;
+        font-weight: 600;
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url(/img/icon/hexagon-main-color.svg) no-repeat center center;
+            filter: drop-shadow(1px 1px 3px  rgba(0,0,0,.4));
+
+        }
+    }
+}
+.skill__item.animated {
+    .skill__range-inner {
+        transition: right 2s ease;
+        span {
+            &:before {
+                transform: rotate(720deg);
+                transition: transform 2s ease;
+            }
+        }
+    }
+}

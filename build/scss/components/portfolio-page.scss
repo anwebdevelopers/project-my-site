@@ -1,0 +1,312 @@
+/*--------------------
+                       9 ) Portfolio Page
+                      --------------------*/
+
+/* ( a ) Portfolio Section */
+
+#portfolio-page {
+    .image-container {
+        &:before {
+            background-image: url(../img/background/portfolio_image.jpg);
+        }
+    }
+}
+
+.project__controls {
+    padding: 20px 0;
+    text-align: center;
+}
+
+#projects > .mix {
+    display: none;
+}
+
+.projet__items {
+    padding: 20px;
+    font-size: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*----- Hover Effect Portfolio Image --------*/
+
+
+.project__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 33.33333333%;
+    padding: 15px;
+}
+.project__item-inner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        background: transparentize($main-color, .5);
+        transition: all 0.8s ease;
+    }
+
+    &:hover, &:active {
+        .project__item-img {
+            img {
+                filter: brightness(1.1);
+                transform: scale(1.2) translateZ(0);
+            }
+        }
+        .project__item-buttons {
+            a {
+                transform: scale(1);
+                opacity: 1;
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }
+        &:after {
+
+            opacity: 1;
+        }
+    }
+}
+
+.project__item-img {
+    overflow: hidden;
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        filter: brightness(.9);
+        transition: transform .8s ease;
+    }
+}
+
+.project__item-buttons {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    a {
+        position: relative;
+        transform: scale(5);
+        opacity: 0;
+        display: inline-block;
+        vertical-align: top;
+        line-height: 50px;
+        outline: none;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        width: 50px;
+        height: 50px;
+        color: #343333;
+        transition: all 0.3s ease;
+        &:after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: url(/img/icon/hexagon-white-color.svg) no-repeat center center;
+        }
+    }
+}
+
+.project__item-buttons .icon-search {
+    transition-delay: 0.1s;
+}
+
+/*----- Hover Effect Portfolio Image [ END ] --------*/
+
+.project__popup-box {
+    display: none;
+}
+
+.project__popup-content {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0 0 30px 0;
+    border: 5px solid $main-color;
+    background: #fff;
+    .mfp-close {
+        width: 24px;
+        height: 24px;
+        line-height: 25px;
+        background-color: #fff;
+        opacity: .9;
+    }
+}
+.project__popup-img {
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        background: #fff;
+    }
+}
+.project__popup-title {
+    margin: 30px 0 10px;
+    padding: 0 25px;
+    text-align: center;
+    h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}
+.project__popup-list {
+    margin: 10px 0 30px;
+    padding: 0 25px;
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+            position: relative;
+            margin: 0 0 0 15px;
+            line-height: 22px;
+            i {
+                position: absolute;
+                left: -15px;
+                top: 0;
+                font-size: 12px;
+                color: $main-color;
+            }
+        }
+    }
+}
+.project__popup-button {
+    margin: 30px 0 0 0;
+    text-align: center;
+}
+
+
+@import "components/magnific-popup.scss";
+
+
+/*----- Popup Sty;es [ END ] --------*/
+
+/* ( b )  Testimonial Section */
+
+.testimonials {
+    @extend .clearfix;
+    background: $main-color;
+}
+
+.testimonials .small-heading {
+    h3 {
+        color: #fff;
+    }
+}
+
+.testimonials__box {
+    width: 83.33333333%;
+    margin: 0 auto;
+    padding: 20px;
+    h3 {
+
+    }
+}
+
+.testimonials__slider {
+    .owl-nav {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        right: 0;
+    }
+    .owl-prev, .owl-next {
+        position: absolute;
+        transition: transform .3s ease, filter .3s ease;
+        &:hover {
+            transform: scale(1.2);
+            filter: drop-shadow(1px 1px 2px rgba(0,0,0,.3));
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            width: 30px;
+            height: 2px;
+            background-color: #fff;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            border: 6px solid transparent;
+        }
+    }
+    .owl-prev {
+        left: 0;
+        top: 0;
+        width: 32px;
+        height: 16px;
+        &:before {
+            left: 12px;
+        }
+        &:after {
+            left: 0;
+            border-right: 12px solid #fff;
+        }
+    }
+    .owl-next {
+        right: 0;
+        top: 0;
+        width: 32px;
+        height: 16px;
+        &:before {
+            right: 12px;
+        }
+        &:after {
+            right: 0;
+            border-left: 10px solid #fff;
+        }
+    }
+}
+
+.testimonials__item-text {
+    p {
+        margin: 0 0 10px 0;
+        font-style: italic;
+        color: #fff;
+        font-size: 16px;
+        text-align: center;
+        line-height: 1.42;
+        i {
+            margin: 0 10px;
+        }
+    }
+}
+.testimonials__item-name {
+    margin: 20px 0 10px 0;
+    h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        font-style: italic;
+        color: #fff;
+        text-align: center;
+        a {
+            color: #fff;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,248 @@
+/*------------------
+                       7 ) Profile Page
+                      ------------------*/
+
+/* ( a ) Story of Glory */
+
+#profile-page {
+    .image-container {
+        &:before {
+            background-image: url(../img/background/profile_image.jpg);
+        }
+    }
+}
+
+.story {
+    padding: 0 0 60px 0;
+    background: url(../img/background/story_bg.jpg);
+    background-size: cover;
+}
+.story__box {
+    @extend .clearfix;
+    width: 91.66666667%;
+    margin: 20px 0 0 8.33333333%;
+    padding: 0 20px 0;
+}
+
+.story__img {
+    float: left;
+    width: 33.33333333%;
+    padding: 0;
+    border: 1px solid $main-color;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+.story__text {
+    padding: 0 15px;
+    margin: 0 0 0 33.33333333%;
+    width: 66.66666667%;
+    h3 {
+        text-transform: uppercase;
+        color: $main-color;
+        line-height: 1;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 20px 0 10px 0;
+    }
+    p {
+        margin: 10px 0;
+        text-indent: 25px;
+        font-size: 14px;
+        line-height: 1.42;
+    }
+    a {
+        border: 1px solid $main-color;
+        color: $main-color;
+        display: block;
+        float: left;
+        margin: 29px 5px;
+        padding: 10px 25px;
+        text-decoration: none;
+        text-align: center;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        &:hover {
+            background: $main-color;
+            color: #fff;
+        }
+    }
+}
+
+
+/* ( b ) What Can I Do */
+
+.services {
+    background: $main-color;
+}
+
+.services__box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0 0 0;
+    padding: 0 15px;
+    text-align: center;
+    font-size: 0;
+}
+
+.services__item {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: 33.33333333%;
+    text-align: center;
+    padding: 15px 15px 25px 15px;
+    transition: background 0.3s ease, transform 1.6s ease;
+    transform: scale(.3);
+    opacity: 0;
+    &:hover {
+        background: rgba( 255, 255, 255, 0.05);
+        .services__img {
+			i {
+                filter: brightness(1) grayscale(0);
+            }
+            &:before {
+                opacity: .8;
+            }
+            &:after {
+                opacity: 0;
+                transform: scale(1.8);
+            }
+		}
+    }
+}
+
+.services__item.animated {
+    transform: scale(1);
+    opacity: 1;
+}
+.services__img {
+    position: relative;
+    padding: 35px 0;
+    font-size: 10px;
+    overflow: hidden;
+    &:before {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        right: 10%;
+        bottom: 10%;
+        background: url(/img/icon/hexagon-white-color.svg) no-repeat center center;
+        content: '';
+        display: block;
+        opacity: .4;
+        transform: translateZ(0);
+        transition: opacity .2s linear;
+    }
+    &:after {
+        content: '';
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 0;
+        background: url(/img/icon/hexagon-white-color.svg) no-repeat center center;
+        opacity: .1;
+        transform: translateZ(0);
+        transition: opacity .2s linear, transform .2s linear;
+    }
+	i {
+        position: relative;
+        z-index: 1;
+        transform: translateZ(0);
+        filter: brightness(1.2) grayscale(1);
+    	transition: transform .5s ease, filter .5s ease;
+    }
+
+}
+.services__item:nth-child(1) .services__img i {
+	@include sprite(wwwc);
+}
+.services__item:nth-child(2) .services__img i {
+	@include sprite(browsers);
+}
+.services__item:nth-child(3) .services__img i {
+	@include sprite(responsive);
+}
+.services__item:nth-child(4) .services__img i {
+	@include sprite(semantics);
+}
+.services__item:nth-child(5) .services__img i {
+	@include sprite(google);
+}
+.services__item:nth-child(6) .services__img i {
+	@include sprite(htmlcss);
+}
+.services__item-title {
+    margin: 20px 0 10px 0;
+    h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #fff;
+    }
+}
+.services__item-text {
+    margin: 10px 0 0 0;
+    p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.42;
+        color: #fff;
+    }
+}
+
+/* ( c ) Some Facts */
+
+.facts {
+    position: relative;
+    background: url(../img/background/facts-bg.jpg);
+    background-size: cover;
+    text-align: center;
+    padding: 50px 15px;
+    font-size: 0;
+    display: flex;
+    &:before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background-color: transparentize(#fff, .3);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+.facts__item {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    vertical-align: top;
+    width: 33.33333333%;
+    padding: 0 15px;
+}
+.facts__number {
+    font-family: 'PF DinDisplay Pro', sans-serif;
+    font-size: 63px;
+    font-weight: 600;
+    color: #343333;
+}
+.facts__title {
+    margin: 20px 0 10px 0;
+    h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}

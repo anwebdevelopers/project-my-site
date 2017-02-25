@@ -1,0 +1,188 @@
+@import "bourbon";
+@import 'components/sprite.scss';
+@import 'components/vars.scss';
+@import 'components/mixins.scss';
+@import "components/normalize.scss";
+//@import "html/libs/bootstrap/css/bootstrap.min";
+
+*::-webkit-input-placeholder {
+	color: $main-color;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: $main-color;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: $main-color;
+	opacity: 1;
+}
+
+*:-ms-input-placeholder {
+	color: $main-color;
+	opacity: 1;
+}
+.error::-webkit-input-placeholder {
+	color: #f00;
+	opacity: 1;
+}
+.error:-moz-placeholder {
+	color: #f00;
+	opacity: 1;
+}
+.error::-moz-placeholder {
+	color: #f00;
+	opacity: 1;
+}
+
+.error:-ms-input-placeholder {
+	color: #f00;
+	opacity: 1;
+}
+.error:focus::-webkit-input-placeholder {
+	color: #f00;
+	opacity: 1;
+}
+.error:focus:-moz-placeholder {
+	color: #f00;
+	opacity: 1;
+}
+.error:focus::-moz-placeholder {
+	color: #f00;
+	opacity: 1;
+}
+
+.error:focus:-ms-input-placeholder {
+	color: #f00;
+	opacity: 1;
+}
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+a {
+	outline: none !important;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #343333;
+}
+
+html,
+body,
+textarea,
+button,
+input {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'PF DinDisplay Pro', sans-serif;
+}
+img {
+    vertical-align: middle;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.1;
+	background-color: #fff;
+	overflow-x: hidden;
+}
+.button {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px 0;
+	padding: 10px 25px;
+	text-decoration: none;
+	background: none;
+	outline: none;
+	box-shadow: none;
+	border: 1px solid $main-color;
+	color: $main-color;
+	border-radius: 2px;
+	transition: all 0.3s ease-out;
+	overflow: hidden;
+	span {
+		position: relative;
+		z-index: 1;
+	}
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 0;
+		height: 0;
+		width: 0;
+		height: 0;
+		background-image: url(../img/icon/hexagon-main-color.svg);
+		background-position: center center;
+		background-size: 100%;
+		transform: translate(-50%, -50%);
+		transition: all .5s ease;
+	}
+	&:hover, &:active, &:focus {
+		color: #fff;
+		&:before {
+			width: 600px;
+			height: 600px;
+		}
+	}
+}
+.button.active {
+	color: #fff;
+	&:before {
+		width: 600px;
+		height: 600px;
+		top: 50%;
+		left: 50%;
+	}
+}
+//Custom Styles Here
+@import "components/logo.scss";
+@import "components/home-page.scss";
+@import "components/content-page-general.scss";
+@import "components/profile-page.scss";
+@import "components/resume-page.scss";
+@import "components/portfolio-page.scss";
+@import "components/contacts-page.scss";
+
+//@import "build/scss/components/magnific-popup.scss";
+
+//ALWAYS END
+@import "components/media.scss";
+
+//Load Libs SASS
+//@import "html/libs/animate/animate.sass";
+@import "html/libs/owl.carousel/dist/assets/owl.carousel.min";
+@import "html/libs/fontello/css/fontello";
+//@import "html/libs/jQuery.mmenu/dist/css/jquery.mmenu.all";
+@import "html/libs/magnific-popup/dist/magnific-popup";
